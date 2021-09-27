@@ -14,8 +14,9 @@ async function doRequest (myRequest) {
     await fetch(myRequest)
         .then(response => {
             if (response.status === 200) {
-                console.info("doRequest json:" + response.json());
-                return response.json();
+                let doRequestJson = response.json()
+                console.info("doRequest json:" + doRequestJson);
+                return doRequestJson;
             } else {
                 throw new Error('Ops! Houve um erro em nosso servidor.');
             }
