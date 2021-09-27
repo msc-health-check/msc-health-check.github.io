@@ -10,10 +10,11 @@ function getAll() {
     console.info("json:" + json);
 }
 
-function doRequest (myRequest) {
-    fetch(myRequest)
+async function doRequest (myRequest) {
+    await fetch(myRequest)
         .then(response => {
             if (response.status === 200) {
+                console.info("doRequest json:" + response.json());
                 return response.json();
             } else {
                 throw new Error('Ops! Houve um erro em nosso servidor.');
