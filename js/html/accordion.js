@@ -39,12 +39,12 @@ function getAccordion (list) {
                     ${key}
                 </button>
             </h2>
-            <div id="panelsStayOpen-collapse-${key}" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading-${key}">
+            <div id="panelsStayOpen-collapse-${key}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading-${key}">
                 <div class="accordion-body">
                     ${table}
                 </div>
             </div>
-        </div>
+        </div> <br/>
       `
         );
     }
