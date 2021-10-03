@@ -28,7 +28,7 @@ async function getServiceHome () {
         projectCheckServices.push(service)
     }
 
-    let payload = PayLoad(parse.ServicesAmount, projectCheckServices);
+    let payload = PayLoad(parse.servicesAmount, projectCheckServices);
 
     return payload;
 }
