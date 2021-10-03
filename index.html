@@ -71,6 +71,7 @@
         </div>
     </div>
     <div id="indexAccordionID"></div>
+    <div id="indexTableID"></div>
 </main><!-- /.container -->
 <br/>
 
@@ -78,18 +79,29 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 
+<script src="js/service/model.js"></script>
 <script src="js/service/connection.js"></script>
+<script src="js/service/service.js"></script>
+<script src="js/html/table.js"></script>
 <script src="js/html/accordion.js"></script>
 <script type="application/javascript">
 
-    async function loadAccordion() {
-        let list = await getAll();
-        let accordion = getAccordion(list);
-        let accordionDiv = document.getElementById("indexAccordionID");
-        accordionDiv.innerHTML = accordion;
-    }
+    // async function loadAccordion() {
+    //     let list = await getAll();
+    //     let accordion = getAccordion(list);
+    //     let accordionDiv = document.getElementById("indexAccordionID");
+    //     accordionDiv.innerHTML = accordion;
+    // }
+    //
+    // loadAccordion();
 
-    loadAccordion();
+    async function loadTable() {
+        let serviceHome = await getServiceHome();
+        let home = tableHome(serviceHome);
+        let tableDiv = document.getElementById("indexTableID");
+        tableDiv.innerHTML = home;
+    }
+    loadTable();
 
     let umMin = 1000 * 60;
     let tempoReload = 6 * umMin;

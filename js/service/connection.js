@@ -3,7 +3,7 @@ const context = '/health-check';
 
 const call = host + context;
 
-async function getAll() {
+async function getAll_BKP() {
 
     const myRequest = new Request(call, {
             method: 'GET',
@@ -33,9 +33,22 @@ async function getAll() {
     return list;
 }
 
+async function getConnectionHome() {
+
+    const myRequest = new Request(call, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
+        }
+    );
+
+    let result = await doRequest(myRequest);
+
+    return result;
+}
+
 async function doRequest(request) {
     let response = await fetch(request);
     return await response.json()
 }
-
-// getAll().then(r => r);
