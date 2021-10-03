@@ -17,6 +17,7 @@ function getAccordion (list) {
                           <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
+                                      <th scope="col">#</th>
                                       <th scope="col">Status Code</th>
                                       <th scope="col">Time</th>
                                     </tr>
@@ -26,6 +27,7 @@ function getAccordion (list) {
             for (let [key, val] of checksOut) {
                 (table += `
                     <tr>
+                      <td>${Number.parseInt(key) + 1}</td>
                       <td>${val.statusCode}</td>
                       <td>${val.time}</td>
                     </tr>
