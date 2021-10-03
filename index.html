@@ -69,6 +69,12 @@
     }
 
     loadAccordion();
+
+    let umMin = 1000 * 60;
+    let tempoReload = 6 * umMin;
+    window.setInterval(function(){
+        window.location.reload();
+    }, tempoReload);
 </script>
 
 </body>
