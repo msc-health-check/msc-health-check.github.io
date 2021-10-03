@@ -16,7 +16,7 @@ function tableHome (payload) {
     for (let serv of payload.services) {
         (table += `
                     <tr>
-                      <td>#</td>
+                      <td><a href="javascript:nada();" data-bs-toggle="modal" data-bs-target="#modal-${serv.id}">ver</a> </td>
                       <td>${serv.appName}</td>
                       <td>${serv.checksOutSize}</td>
                       <td>${serv.LiveSignalsSize}</td>

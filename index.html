@@ -72,6 +72,7 @@
     </div>
     <div id="indexAccordionID"></div>
     <div id="indexTableID"></div>
+    <div id="indexModalID"></div>
 </main><!-- /.container -->
 <br/>
 
@@ -80,10 +81,11 @@
         crossorigin="anonymous"></script>
 
 <script src="js/service/model.js"></script>
+<script src="js/html/table.js"></script>
+<script src="js/html/modal.js"></script>
+<script src="js/html/accordion.js"></script>
 <script src="js/service/connection.js"></script>
 <script src="js/service/service.js"></script>
-<script src="js/html/table.js"></script>
-<script src="js/html/accordion.js"></script>
 <script type="application/javascript">
 
     // async function loadAccordion() {
@@ -94,14 +96,25 @@
     // }
     //
     // loadAccordion();
+    async function loadHome() {
+        let payload = await getServiceHome();
+        loadTable(payload);
+        createModal(payload);
+    }
 
-    async function loadTable() {
-        let serviceHome = await getServiceHome();
-        let home = tableHome(serviceHome);
+    function loadTable(payload) {
+        let home = tableHome(payload);
         let tableDiv = document.getElementById("indexTableID");
         tableDiv.innerHTML = home;
     }
-    loadTable();
+
+    function createModal(payload) {
+        let home = modalHome(payload);
+        let modalDiv = document.getElementById("indexModalID");
+        modalDiv.innerHTML = home;
+    }
+
+    loadHome()
 
     let umMin = 1000 * 60;
     let tempoReload = 6 * umMin;

@@ -17,3 +17,10 @@ function PayLoad(servicesAmount, services) {
     newObj.services = services;
     return newObj;
 }
+
+function ChecksOut (statusCode, time) {
+    let newObj = new Object();
+    newObj.statusCode = statusCode;
+    newObj.time = time;
+    return newObj;
+}
