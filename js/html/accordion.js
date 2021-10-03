@@ -1,5 +1,9 @@
 function getAccordion (list) {
 
+    if (list === 'undefined' || list === null) {
+        return;
+    }
+
     let output = `<div class="accordion">`;
     for (let [key, v] of list) {
 
@@ -34,7 +38,7 @@ function getAccordion (list) {
         (output += `
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-heading-${key}">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#panelsStayOpen-collapse-${key}" aria-expanded="true" aria-controls="panelsStayOpen-collapse-${key}">
                     ${key}
                 </button>
