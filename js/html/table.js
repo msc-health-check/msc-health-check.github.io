@@ -2,7 +2,7 @@ function tableHome (payload) {
 
     let table = "";
     table += `<div class="table-responsive">
-                          <table class="table table-striped table-hover">
+                          <table class="table table-striped table-hover" id="idTabelaHome">
                                 <thead>
                                     <tr>
                                       <th scope="col">#</th>
