@@ -119,6 +119,7 @@
         <!--  Fim  Como Usar Modal  -->
 
     </div> <!-- /.container -->
+    <br/>
 </main>
 <footer class="footer mt-auto py-3 my-4">
     <div class="container">
@@ -173,10 +174,9 @@
     loadHome();
 
     $(document).ready( function () {
-        window.setInterval(function(){
+        setTimeout(function() {
             $('#idTabelaHome').DataTable();
         }, 1000);
-
     });
 
     let umMin = 1000 * 60;

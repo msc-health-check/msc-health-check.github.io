@@ -5,26 +5,36 @@ async function getServiceHome () {
 
     let parse = JSON.parse(json);
     let projectCheckServices = [];
-    let checksOuts = [];
+
     for (serv of parse.Services) {
 
-        let checksOutSize = 0;
+        let checksOutList = [];
+        let liveSignalList = [];
+        let errorsList = [];
+
         if (serv.ChecksOut !== 'undefined' && serv.ChecksOut !== null) {
             let checksOut = Object.entries(serv.ChecksOut);
             for (let [key, val] of checksOut) {
                 let checkO = ChecksOut(val.statusCode, val.time);
-                checksOuts.push(checkO);
-                checksOutSize++;
+                checksOutList.push(checkO);
+            }
+        }
+
+        if (serv.Errors !== 'undefined' && serv.Errors !== null) {
+            let errors = Object.entries(serv.Errors);
+            for (let [key, val] of errors) {
+                let error = Errors(val.time, val.error);
+                errorsList.push(error);
             }
         }
 
         let liveSignals = Object.entries(serv.LiveSignals);
-        let liveSignalsSize = 0;
         for (let [key, val] of liveSignals) {
-            liveSignalsSize++;
+            let liveSignal = LiveSignal(val.time);
+            liveSignalList.push(liveSignal)
         }
 
-        let service = ProjectCheckService(serv.ID, serv.AppName, checksOuts, null, checksOutSize, liveSignalsSize);
+        let service = ProjectCheckService(serv.ID, serv.AppName, checksOutList, liveSignalList, errorsList);
         projectCheckServices.push(service)
     }
 
