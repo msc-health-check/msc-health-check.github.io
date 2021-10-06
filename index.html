@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="h-100">
+<html lang="pt-br" class="h-100" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -107,11 +107,17 @@
                     </div>
                     <div class="modal-body">
                         <h2>Registrar Serviço</h2>
-                        Para registrar um serviço basta fazer uma requisição para a
+                        <p>Para registrar um serviço basta fazer uma requisição para a
                         aplicação conforme o exemplo a seguir. Desta forma, a cada 5 minutos
                         será efetuada uma checagem na URL informada. <br/>
                         ex.: <br/>
-                        <pre><code>curl -vvv -X POST 'https://msc-health-check.herokuapp.com/health-check' --data-raw '{"URL": "https://myAppExemplo.com/myHealthCheck", "appName": "myAppName"}'</code></pre>
+                        <pre><code>curl -v -X POST 'https://msc-health-check.herokuapp.com/health-check' --data-raw '{"URL": "https://myAppExemplo.com/myHealthCheck", "appName": "myAppName"}'</code></pre>
+                        </p>
+                        <h2>Live Signal (ação opcional)</h2>
+                        <p>Para que o serviço registrado possa enviar uma requisição para informar que o mesmo está
+                            ativo e conseguindo enviar requisições para fora do ambiente no qual está localizado.
+                        <pre><code>curl -v -X PUT 'https://msc-health-check.herokuapp.com/health-check/[APP_NAME]/[ID_SERVICO]'</code></pre>
+                        </p>
                     </div>
                 </div>
             </div>
