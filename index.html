@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="h-100" xmlns="http://www.w3.org/1999/html">
+<html lang="pt-br" class="h-100" xmlns="http:/www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,36 @@
     <meta name="google-site-verification" content="1kPAYr37JXqXWPRNiKIal5p_4hMegRtQcAWfFlpteZ0" />
     <meta name="author" content="Mairon Costa">
     <meta name="description" content="Health checks online e gratuito. Tem como objetivo ajudar a monitorar serviços de forma gratuita.">
-    <meta name="keywords" content="alive, check, desenvolvimento, devops, health, monitoramento, monitorar, online, ping, programação, sites, web">
+    <meta name="keywords" content="alive, check, desenvolvimento, dev, devops, health, health-check, monitoramento, monitorar, online, ping, programação, sites, web, health-check">
 
 <!--    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">-->
-    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="max-age=0">
+
+    <link rel="shortcut icon" href="/images/icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/icon/favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/icon/ms-icon-144x144.png">
+
     <meta name="theme-color" content="#7952b3">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https:/cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https:/cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <title>msc-health-check</title>
@@ -43,7 +64,7 @@
 </head>
 <body class="d-flex flex-column h-100">
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg xmlns="http:/www.w3.org/2000/svg" style="display: none;">
     <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
     </symbol>
@@ -58,7 +79,7 @@
 <main role="main" class="flex-shrink-0">
     <div class="container">
         <div class="starter-template">
-            <h1>Operação Health Checker</h1>
+            <h1>Serviço Health Check</h1>
             <p class="lead">Visualização dos últimos health checks feitos nos serviços registrados.</p>
             <p>
                 <a href="javascript:nada();" data-bs-toggle="modal" data-bs-target="#modalComoUsar">Como Usar</a>
@@ -111,13 +132,13 @@
                         aplicação conforme o exemplo a seguir. Desta forma, a cada 5 minutos
                         será efetuada uma checagem na URL informada. <br/>
                         ex.: <br/>
-                        <pre><code>curl -v -X POST 'https://msc-health-check.herokuapp.com/health-check' --data-raw '{"URL": "https://myAppExemplo.com/myHealthCheck", "appName": "myAppName"}'</code></pre>
+                        <pre><code>curl -v -X POST 'https:/msc-health-check.herokuapp.com/health-check' --data-raw '{"URL": "https:/myAppExemplo.com/myHealthCheck", "appName": "myAppName"}'</code></pre>
                         </p>
                         <h2>Live Signal (ação opcional)</h2>
                         <p>Para que o serviço registrado possa enviar uma requisição para informar que o mesmo está
                             ativo e conseguindo enviar requisições para fora do ambiente no qual está localizado. <br/>
                             ex.: <br/>
-                        <pre><code>curl -v -X PUT 'https://msc-health-check.herokuapp.com/health-check/[APP_NAME]/[ID_SERVICO]'</code></pre>
+                        <pre><code>curl -v -X PUT 'https:/msc-health-check.herokuapp.com/health-check/[APP_NAME]/[ID_SERVICO]'</code></pre>
                         </p>
                     </div>
                 </div>
@@ -145,10 +166,10 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https:/code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https:/cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+<script src="https:/cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 
