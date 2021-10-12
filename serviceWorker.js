@@ -1,7 +1,7 @@
 const staticContagemValores = "msc-health-check-v1.0"
 const assets = [
     "/",
-    // "/index.html",
+    "/index.html",
     // "/css/style.css",
     "/js/index.js",
     "/js/app.js",
