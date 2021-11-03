@@ -94,8 +94,11 @@
             </svg>
             <div>
                 A cada ciclo de 2h a lista de serviços registrados é limpa e deve-se realizar o registro novamente.
+                <br/><br/>
+                <strong>Última limpeza</strong>: <span id="indexLastStartCheckID"></span>
             </div>
         </div>
+
         <div id="indexAccordionID"></div>
         <div id="indexTableID"></div>
         <div id="indexModalID"></div>
@@ -184,6 +187,9 @@
 
     async function loadHome() {
         let payload = await getServiceHome();
+        let indexLastStartCheckID = document.getElementById("indexLastStartCheckID");
+        indexLastStartCheckID.innerHTML = payload.lastStartCheck;
+
         await loadTable(payload);
         createModal(payload);
 

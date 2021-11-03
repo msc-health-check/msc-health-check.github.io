@@ -6,7 +6,7 @@ async function getServiceHome () {
     let parse = JSON.parse(json);
     let projectCheckServices = [];
 
-    for (serv of parse.Services) {
+    for (let serv of parse.Services) {
 
         let checksOutList = [];
         let liveSignalList = [];
@@ -38,7 +38,8 @@ async function getServiceHome () {
         projectCheckServices.push(service)
     }
 
-    let payload = PayLoad(parse.servicesAmount, projectCheckServices);
+    let payload = PayLoad(parse.ServicesAmount, projectCheckServices, parse.LastStartCheck);
+    // console.info('payload: ' + payload.lastStartCheck);
 
     return payload;
 }

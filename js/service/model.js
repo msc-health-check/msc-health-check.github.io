@@ -14,10 +14,11 @@ function ProjectCheckService(ID, appName, checksOut, liveSignals, errors) {
     return newObj;
 }
 
-function PayLoad(servicesAmount, services) {
+function PayLoad(servicesAmount, services, lastStartCheck) {
     let newObj = new Object();
     newObj.servicesAmount = servicesAmount;
     newObj.services = services;
+    newObj.lastStartCheck = lastStartCheck;
     return newObj;
 }
 
